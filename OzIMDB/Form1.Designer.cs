@@ -33,6 +33,7 @@
             this.txtFilmId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.gboPuan = new System.Windows.Forms.GroupBox();
+            this.rbPuanYok = new System.Windows.Forms.RadioButton();
             this.rbPuan3 = new System.Windows.Forms.RadioButton();
             this.rbPuan5 = new System.Windows.Forms.RadioButton();
             this.rbPuan1 = new System.Windows.Forms.RadioButton();
@@ -43,7 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pboFoto = new System.Windows.Forms.PictureBox();
             this.lstFilmler = new System.Windows.Forms.ListBox();
-            this.rbPuanYok = new System.Windows.Forms.RadioButton();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.gboPuan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboFoto)).BeginInit();
@@ -108,12 +109,28 @@
             this.gboPuan.Controls.Add(this.rbPuan1);
             this.gboPuan.Controls.Add(this.rbPuan4);
             this.gboPuan.Controls.Add(this.rbPuan2);
-            this.gboPuan.Location = new System.Drawing.Point(18, 167);
+            this.gboPuan.Location = new System.Drawing.Point(18, 143);
             this.gboPuan.Name = "gboPuan";
-            this.gboPuan.Size = new System.Drawing.Size(200, 196);
+            this.gboPuan.Size = new System.Drawing.Size(163, 237);
             this.gboPuan.TabIndex = 10;
             this.gboPuan.TabStop = false;
             this.gboPuan.Text = "Puanı";
+            // 
+            // rbPuanYok
+            // 
+            this.rbPuanYok.AutoSize = true;
+            this.rbPuanYok.Checked = true;
+            this.rbPuanYok.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rbPuanYok.ForeColor = System.Drawing.Color.Black;
+            this.rbPuanYok.Location = new System.Drawing.Point(12, 25);
+            this.rbPuanYok.Name = "rbPuanYok";
+            this.rbPuanYok.Size = new System.Drawing.Size(139, 27);
+            this.rbPuanYok.TabIndex = 9;
+            this.rbPuanYok.TabStop = true;
+            this.rbPuanYok.Text = "Puan Verilmedi";
+            this.rbPuanYok.UseVisualStyleBackColor = true;
+            this.rbPuanYok.CheckedChanged += new System.EventHandler(this.rbPuanYok_CheckedChanged);
+            this.rbPuanYok.Leave += new System.EventHandler(this.rbPuanYok_Leave);
             // 
             // rbPuan3
             // 
@@ -127,6 +144,8 @@
             this.rbPuan3.Tag = "3";
             this.rbPuan3.Text = "3- İdare Eder";
             this.rbPuan3.UseVisualStyleBackColor = true;
+            this.rbPuan3.CheckedChanged += new System.EventHandler(this.rbPuanYok_CheckedChanged);
+            this.rbPuan3.Leave += new System.EventHandler(this.rbPuanYok_Leave);
             // 
             // rbPuan5
             // 
@@ -140,6 +159,8 @@
             this.rbPuan5.Tag = "5";
             this.rbPuan5.Text = "5- Çok İyi";
             this.rbPuan5.UseVisualStyleBackColor = true;
+            this.rbPuan5.CheckedChanged += new System.EventHandler(this.rbPuanYok_CheckedChanged);
+            this.rbPuan5.Leave += new System.EventHandler(this.rbPuanYok_Leave);
             // 
             // rbPuan1
             // 
@@ -153,6 +174,8 @@
             this.rbPuan1.Tag = "1";
             this.rbPuan1.Text = "1- Çok Kötü";
             this.rbPuan1.UseVisualStyleBackColor = true;
+            this.rbPuan1.CheckedChanged += new System.EventHandler(this.rbPuanYok_CheckedChanged);
+            this.rbPuan1.Leave += new System.EventHandler(this.rbPuanYok_Leave);
             // 
             // rbPuan4
             // 
@@ -166,6 +189,8 @@
             this.rbPuan4.Tag = "4";
             this.rbPuan4.Text = "4- İyi";
             this.rbPuan4.UseVisualStyleBackColor = true;
+            this.rbPuan4.CheckedChanged += new System.EventHandler(this.rbPuanYok_CheckedChanged);
+            this.rbPuan4.Leave += new System.EventHandler(this.rbPuanYok_Leave);
             // 
             // rbPuan2
             // 
@@ -179,23 +204,25 @@
             this.rbPuan2.Tag = "2";
             this.rbPuan2.Text = "2- Kötü";
             this.rbPuan2.UseVisualStyleBackColor = true;
+            this.rbPuan2.CheckedChanged += new System.EventHandler(this.rbPuanYok_CheckedChanged);
+            this.rbPuan2.Leave += new System.EventHandler(this.rbPuanYok_Leave);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(221, 366);
+            this.label3.Location = new System.Drawing.Point(186, 383);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(199, 16);
+            this.label3.Size = new System.Drawing.Size(253, 16);
             this.label3.TabIndex = 9;
-            this.label3.Text = "(Resmi Değiştirmek İçin Tıklayınız.)";
+            this.label3.Text = "Değiştirmek İçin Fotoğraf Üstüne Tıklayınız.)";
             // 
             // txtFilmAd
             // 
             this.txtFilmAd.BackColor = System.Drawing.Color.LightCyan;
             this.txtFilmAd.Location = new System.Drawing.Point(22, 115);
             this.txtFilmAd.Name = "txtFilmAd";
-            this.txtFilmAd.Size = new System.Drawing.Size(387, 26);
+            this.txtFilmAd.Size = new System.Drawing.Size(410, 26);
             this.txtFilmAd.TabIndex = 2;
             this.txtFilmAd.TextChanged += new System.EventHandler(this.txtFilmAd_TextChanged);
             // 
@@ -211,9 +238,10 @@
             // pboFoto
             // 
             this.pboFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.pboFoto.Location = new System.Drawing.Point(224, 175);
+            this.pboFoto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pboFoto.Location = new System.Drawing.Point(189, 147);
             this.pboFoto.Name = "pboFoto";
-            this.pboFoto.Size = new System.Drawing.Size(185, 188);
+            this.pboFoto.Size = new System.Drawing.Size(243, 233);
             this.pboFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboFoto.TabIndex = 0;
             this.pboFoto.TabStop = false;
@@ -232,22 +260,13 @@
             this.lstFilmler.Size = new System.Drawing.Size(321, 404);
             this.lstFilmler.TabIndex = 2;
             this.lstFilmler.ValueMember = "Id";
-            this.lstFilmler.SelectedIndexChanged += new System.EventHandler(this.lstFilmler_SelectedIndexChanged);
+            this.lstFilmler.SelectedValueChanged += new System.EventHandler(this.lstFilmler_SelectedValueChanged);
+            this.lstFilmler.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstFilmler_KeyDown);
             // 
-            // rbPuanYok
+            // openFileDialog1
             // 
-            this.rbPuanYok.AutoSize = true;
-            this.rbPuanYok.Checked = true;
-            this.rbPuanYok.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rbPuanYok.ForeColor = System.Drawing.Color.Black;
-            this.rbPuanYok.Location = new System.Drawing.Point(12, 25);
-            this.rbPuanYok.Name = "rbPuanYok";
-            this.rbPuanYok.Size = new System.Drawing.Size(139, 27);
-            this.rbPuanYok.TabIndex = 9;
-            this.rbPuanYok.TabStop = true;
-            this.rbPuanYok.Tag = "";
-            this.rbPuanYok.Text = "Puan Verilmedi";
-            this.rbPuanYok.UseVisualStyleBackColor = true;
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "Resim Dosyaları (*.BMP;*.JPG;*.PNG;*.GIF)|*.BMP;*.JPG;*.JPEG;*.PNG;*.GIF";
             // 
             // Form1
             // 
@@ -259,6 +278,7 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(857, 509);
             this.Name = "Form1";
             this.Text = "ÖZ IMDB 1.0";
             this.groupBox1.ResumeLayout(false);
@@ -288,6 +308,7 @@
         private System.Windows.Forms.TextBox txtFilmId;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton rbPuanYok;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
